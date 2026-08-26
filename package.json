@@ -1,0 +1,61 @@
+{
+  "name": "schema-evolution-planner",
+  "version": "0.1.0",
+  "description": "Deterministic flat-schema evolution plans with injected type compatibility and explicit resolutions.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Artem Prianishnikov",
+    "url": "https://github.com/FrankFMY"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankFMY/schema-evolution-planner.git"
+  },
+  "homepage": "https://github.com/FrankFMY/schema-evolution-planner#readme",
+  "bugs": {
+    "url": "https://github.com/FrankFMY/schema-evolution-planner/issues"
+  },
+  "keywords": [
+    "schema",
+    "migration",
+    "compatibility",
+    "planner",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "oxlint --deny-warnings src tests",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "pack:check": "npm pack --dry-run"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "oxlint": "^1.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}
